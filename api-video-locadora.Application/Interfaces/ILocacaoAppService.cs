@@ -7,9 +7,10 @@ namespace api_video_locadora.Application.Interfaces
 {
     public interface ILocacaoAppService
     {
-        IEnumerable<Locacao> ListarFilmesLocados();
-        void LocarLocacao(int clienteId, int filmeId, int periodo);
-        void DevolverLocacao(int clienteId, int filmeId);
+        IEnumerable<Locacao> ListarTodasLocacoes();
+        Locacao BuscarLocacaoPorId(long clienteCpf, int filmeId, DateTime dataIncio);
+        string CadastrarNovaLocacao(long clienteCpf, int filmeId, int periodo);
+        string DevolverFilme(long clienteCpf, int filmeId, DateTime dataLocacao);
 
     }
 }

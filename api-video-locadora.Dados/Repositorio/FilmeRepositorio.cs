@@ -1,4 +1,5 @@
-﻿using api_video_locadora.Domain.Models;
+﻿using api_video_locadora.Domain.Interfaces;
+using api_video_locadora.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading;
 
 namespace api_video_locadora.Dados.Repositorio
 {
-    public class FilmeRepositorio
+    public class FilmeRepositorio: IFilmeRepositorio
     {
         private List<Filme> filmes;
 
@@ -68,6 +69,26 @@ namespace api_video_locadora.Dados.Repositorio
                 return true;
             }
            
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool AtualizarStatusFilme (int id, string status)
+        {
+            Filme filme = BuscarFilmePorId(id);
+
+            if (filme != null && filme.Ativo == true)
+            {
+                filmes.Remove(filme);
+                filme.Status = status;
+                filmes.Add(filme);
+
+                return true;
+            }
+
             else
             {
                 return false;

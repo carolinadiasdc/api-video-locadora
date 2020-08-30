@@ -14,6 +14,8 @@ namespace api_video_locadora.Domain.Interfaces
         bool CadastrarNovoFilme(Filme novoFilme);
 
         bool DeletarFilme(int id);
+        bool AtualizarStatusFilme(int id, string status);
+
 
     }
 }

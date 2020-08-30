@@ -1,4 +1,5 @@
-﻿using api_video_locadora.Domain.Models;
+﻿using api_video_locadora.Domain.Interfaces;
+using api_video_locadora.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace api_video_locadora.Dados.Repositorio
 {
-    public class ClienteRepositorio
+    public class ClienteRepositorio: IClienteRepositorio
     {
         private List<Cliente> clientes;
 

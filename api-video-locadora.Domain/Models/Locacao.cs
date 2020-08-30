@@ -7,7 +7,7 @@ namespace api_video_locadora.Domain.Models
 {
     public class Locacao
     {
-        public Locacao(Cliente cliente, Filme filme, DateTime dataInicio, DateTime dataFim, int periodo, bool ativo)
+        public Locacao(Cliente cliente, Filme filme, DateTime dataInicio, DateTime? dataFim, int periodo, bool ativo, int diasAtraso)
         {
 
 
@@ -17,6 +17,7 @@ namespace api_video_locadora.Domain.Models
             DataFim = dataFim;
             Periodo = periodo;
             Ativo = ativo;
+            DiasAtraso = diasAtraso;
 
         }
 
@@ -27,10 +28,12 @@ namespace api_video_locadora.Domain.Models
 
         public DateTime DataInicio { get; set; }
 
-        public DateTime DataFim { get; set; }
+        public DateTime? DataFim { get; set; }
 
         public int Periodo { get; set; }
-      
+
         public bool Ativo { get; set; }
+
+        public int DiasAtraso { get; set; }
     }
 }

@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>api_video_locadora.CrossCutting.IoC</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\api-video-locadora.Application\api-video-locadora.Application.csproj" />
+    <ProjectReference Include="..\api-video-locadora.Dados\api-video-locadora.Dados.csproj" />
+  </ItemGroup>
+
+</Project>
